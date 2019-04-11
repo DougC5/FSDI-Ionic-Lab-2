@@ -1,6 +1,6 @@
-import { DataService } from './../../../../myapp/src/app/service/data.service';
 import { Component } from '@angular/core';
 import { Post } from '../post';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -21,13 +21,13 @@ export class HomePage {
     p.content = this.postContent;
     p.imageUrl = this.postURL;
     console.log(p);
-    this.dataSrv.addPost(p);
+    this.dataSrv.addPosts(p);
         this.postContent = '';
         this.postURL = '';
   }
 
   getPost() {
-    return this.dataSrv.getAllPosts;
+    return this.dataSrv.getPosts();
   }
 
 }
